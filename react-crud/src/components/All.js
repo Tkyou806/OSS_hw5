@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import '../index.css';
+
 const Data = () => {
     const [users, setUsers] = useState([]);
     const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const Data = () => {
     const [modalType, setModalType] = useState(null);
 
     // 목에서 Fetch하자. 
-    const fetchUsers = async () => {
+    const fetchData = async () => {
         try {
             const response = await fetch("https://672818a8270bd0b975544f01.mockapi.io/api/v1/users");
             const data = await response.json();
@@ -27,7 +28,7 @@ const Data = () => {
     };
 
     useEffect(() => {
-        fetchUsers();
+        fetchData();
     }, []);
 
     // Create Data Jone!
@@ -40,7 +41,7 @@ const Data = () => {
             });
 
             if (response.status === 201) {
-                fetchUsers();
+                fetchData();
                 resetForm();
             }
 
@@ -60,7 +61,7 @@ const Data = () => {
             });
 
             if (response.status === 200) {
-                fetchUsers();
+                fetchData();
                 resetForm();
             }
 
@@ -76,7 +77,7 @@ const Data = () => {
                 method: "DELETE",
             });
             if (response.status === 200) {
-                fetchUsers();
+                fetchData();
                 resetForm();
             }
         } catch (error) {
@@ -103,7 +104,7 @@ const Data = () => {
             setModalType(null); // 모달 안나오게 바로 닫자
         }
     }, [modalType, deleteData]);
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     return (
         <div className="container">
             <h1 className="mt-3 div_title" >AJAX CRUD</h1>
