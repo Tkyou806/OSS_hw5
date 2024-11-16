@@ -104,7 +104,7 @@ const Data = () => {
             setModalType(null); // 모달 안나오게 바로 닫자
         }
     }, [modalType, deleteData]);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     return (
         <div className="container">
             <h1 className="mt-3 div_title" >AJAX CRUD</h1>
@@ -177,17 +177,17 @@ const Data = () => {
                 />
             </div>
 
-            <button className="btn btn-primary me-2 button_css" onClick = {() => setModalType("create")}>
+            <button className="btn btn-primary me-2 button_css" onClick={() => setModalType("create")}>
                 Create
             </button>
-            <button className="btn btn-warning me-2 button_css" onClick = {() => setModalType("update")}>
+            <button className="btn btn-warning me-2 button_css" onClick={() => setModalType("update")}>
                 Update
             </button>
-            <button className="btn btn-danger button_css" onClick = {() => setModalType("delete")}>
+            <button className="btn btn-danger button_css" onClick={() => setModalType("delete")}>
                 Delete
             </button>
             {/* 여기 좀 더 이쁘게 조정 */}
-            <button className="btn btn-primary me-2 button_css" style = {{ marginLeft: '10px' }} onClick = {() => setShowList(true)}>
+            <button className="btn btn-primary me-2 button_css" style={{ marginLeft: '10px' }} onClick={() => setShowList(true)}>
                 Show List
             </button>
 
@@ -236,7 +236,9 @@ const Data = () => {
                     </div>
                 </div>
             )}
+            <p className = "p_css" style={{marginTop:"50px",textAlign:"center"}}>22300806 sunhee Heo's 5-1Assignment</p>
         </div>
+
     );
 };
 
